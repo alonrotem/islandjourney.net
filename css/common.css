@@ -1,0 +1,142 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh; /* Changed from height to min-height */
+    background-color: #eae6df;
+    overflow-x: hidden;
+    overflow-y: auto;   /* Allows smooth vertical scrolling if elements expand */
+    font-family: system-ui, sans-serif;
+    
+    /* Modern flex layout to push the footer down */
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    padding: 20px;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    flex-grow: 1;
+}
+
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*Back button*/
+#floating-back-btn {
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    z-index: 1000;
+    width: 54px;
+    height: 54px;
+    background-color: rgba(250, 248, 245, 0.4); /* Matches your arrow navigation background */
+    color: #7a7164;            /* Matches your arrow navigation text color */
+    border: 1px solid rgba(140, 131, 117, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0.5;              /* Semi-transparent by default */
+    transition: all 0.3s ease;
+    text-decoration: none;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+#floating-back-btn:hover {
+    opacity: 1;                /* Fully visible on hover */
+    background-color: rgba(250, 248, 245, 0.8);
+    color: #4a443c;
+    border-color: rgba(140, 131, 117, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+#floating-back-btn svg {
+    width: 22px;
+    height: 22px;
+}
+
+/* Shift position slightly on small mobile screens to stay uniform with the arrow buttons */
+@media (max-width: 600px) {
+    #floating-back-btn {
+        top: 16px;
+        left: 16px;
+        width: 40px;
+        height: 40px;
+    }
+    #floating-back-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding-top: 16px;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    color: #7a7164;            
+    opacity: 0.4;              /* Semi-transparent by default */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    user-select: none;         
+    background-color: transparent;
+    margin-top: auto;          /* Pushes itself to the absolute bottom of the flexbox path */
+}
+
+footer:hover {
+    opacity: 1;                /* Fully vibrant on hover */
+}
+
+@media (max-width: 600px) {
+    footer {
+        font-size: 0.75rem;
+        padding: 12px 0;
+    }
+}
+
+footer.floating-footer {
+    position: fixed;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999; /* Sits right beneath navigation buttons but above the book background */
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    color: #7a7164;            /* Matches your arrow button text theme color */
+    opacity: 0.4;              /* Semi-transparent by default */
+    pointer-events: auto;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    white-space: nowrap;
+    user-select: none;         /* Prevents accidental text highlights during mouse dragging */
+    padding: 0 !important;
+    display: inline;
+    width: auto;    
+}
+
+footer.floating-footer:hover {
+    opacity: 1;                /* Fully vibrant when hovered */
+}
+
+/* Keep it legible on small mobile screens */
+@media (max-width: 600px) {
+    footer.floating-footer {
+        font-size: 0.75rem;
+        bottom: 8px;
+    }
+}
