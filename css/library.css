@@ -1,3 +1,14 @@
+@font-face {
+  font-family: Share_Tech_Mono; /* set name */
+  src: url('./fonts/Share_Tech_Mono/ShareTechMono-Regular.ttf'); /* url of the font */
+}
+
+.share-tech-mono {
+    font-family: Share_Tech_Mono, monospace !important;
+    font-weight: 900 !important;
+    font-size: 28px !important;  
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -60,7 +71,7 @@ header p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 300px; /* Fixed ideal width for standalone presentation layout */
+    width: 500px; /* Fixed ideal width for standalone presentation layout */
 }
 
 /* Soft Paper Cover Container */
@@ -114,6 +125,7 @@ header img {
 }
 
 /* Elegant Hover Physics */
+/*
 .book-item:hover .cover-wrapper{
     transform: translateY(-8px) scale(1.07);
     box-shadow: 0 16px 32px rgba(44, 37, 30, 0.15), 
@@ -121,15 +133,18 @@ header img {
     
     border-color: rgba(140, 131, 117, 0.3);
 }
+*/
 
+/*
 .book-item:hover img {
-    transform: translateY(-8px) /*scale(1.07)*/;
+    transform: translateY(-8px) / *scale(1.07)* /;
     filter: drop-shadow(5px 5px 5px #222);
 }
 
 .book-item:hover .cover-wrapper img {
     transform: scale(1.01);
 }
+*/
 
 /* Typography Styling for Book Titles */
 .book-info {
@@ -142,16 +157,18 @@ header img {
     font-family: 'Georgia', serif;
     font-size: 1.1rem;
     color: #2c251e;
-    margin-bottom: 4px;
+    margin-bottom: 15px;
     transition: color 0.2s ease;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
+/*
 .book-item:hover .book-title {
     color: #8c8375; 
 }
+*/
 
 .book-meta {
     font-size: 0.8rem;
