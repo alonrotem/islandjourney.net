@@ -16,9 +16,9 @@
 }
 
 body {
-    background-color: #eae6df; /* Matches your booklet's warm linen backdrop */
-    font-family: system-ui, -apple-system, sans-serif;
-    color: #4a443c;
+    background: #000000;
+    background: linear-gradient(0deg,rgba(0, 0, 0, 1) 0%, rgba(143, 143, 143, 1) 100%);    font-family: system-ui, -apple-system, sans-serif;
+    color: white;
     min-height: 100vh;
     /*padding: 40px 20px;*/
     display: flex;
@@ -156,7 +156,7 @@ header img {
 .book-title {
     font-family: 'Georgia', serif;
     font-size: 1.1rem;
-    color: #2c251e;
+    color: white;
     margin-bottom: 15px;
     transition: color 0.2s ease;
     /*

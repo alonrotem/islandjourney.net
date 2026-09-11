@@ -3,7 +3,9 @@ body, html {
     padding: 0;
     width: 100%;
     min-height: 100vh; /* Changed from height to min-height */
-    background-color: #eae6df;
+    background: #000000;
+    background: linear-gradient(0deg,rgba(0, 0, 0, 1) 0%, rgba(143, 143, 143, 1) 100%);    font-family: system-ui, -apple-system, sans-serif;
+    color: white;
     overflow-x: hidden;
     overflow-y: auto;   /* Allows smooth vertical scrolling if elements expand */
     font-family: system-ui, sans-serif;
@@ -90,8 +92,8 @@ footer {
     font-family: system-ui, -apple-system, sans-serif;
     font-size: 0.8rem;
     letter-spacing: 0.5px;
-    color: #7a7164;            
-    opacity: 0.4;              /* Semi-transparent by default */
+    color: #8d8b89;            
+    opacity: 0.6;              /* Semi-transparent by default */
     transition: opacity 0.3s ease, visibility 0.3s ease;
     user-select: none;         
     background-color: transparent;
@@ -118,7 +120,7 @@ footer.floating-footer {
     font-family: system-ui, -apple-system, sans-serif;
     font-size: 0.8rem;
     letter-spacing: 0.5px;
-    color: #7a7164;            /* Matches your arrow button text theme color */
+    color: #8d8b89;            /* Matches your arrow button text theme color */
     opacity: 0.4;              /* Semi-transparent by default */
     pointer-events: auto;
     transition: opacity 0.3s ease, visibility 0.3s ease;
