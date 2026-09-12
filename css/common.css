@@ -1,3 +1,14 @@
+@font-face {
+  font-family: Share_Tech_Mono; /* set name */
+  src: url('./fonts/Share_Tech_Mono/ShareTechMono-Regular.ttf'); /* url of the font */
+}
+
+.share-tech-mono {
+    font-family: Share_Tech_Mono, monospace !important;
+    font-weight: 900 !important;
+    font-size: 28px !important;  
+}
+
 body, html {
     margin: 0;
     padding: 0;

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benji Comics - Island Journey</title>
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/library.css">
+    <link rel="stylesheet" href="../../css/youtube-modal.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../../images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../../images/favicon/site.webmanifest">    
+
+    <!-- Open Graph Metadata (Facebook, Scrapers) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alonintheworld.com/benji-comics/sections/island-jurney/">
+    <meta property="og:title" content="Benji's Comics Library - Island Journey Collection">
+    <meta property="og:description" content="Read Benji's comics online! Explore the collection of interactive digital books!">
+    <meta property="og:image" content="https://alonintheworld.com/benji-comics/images/island-jurnehy-logo.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Discord & Twitter Cards Meta Tags -->
+    <meta name="twitter:card" content="Benji's comics library!">
+    <meta name="twitter:title" content="Benji's Comics Library - Island Journey Collection">
+    <meta name="twitter:description" content="Read Benji's comics online! Explore the collection of interactive digital books!">
+    <meta name="twitter:image" content="https://alonintheworld.com/benji-comics/images/island-jurnehy-logo.png">    
+</head>
+<body>
+
+    <header>
+        <h1><a href="../../index.html">Benji Comics</a></h1>
+        <img src="../../images/island-jurnehy-logo.png" alt="Super Benji" class="library-logo">
+    </header>
+
+    <!-- Floating Back Button -->
+    <a href="../../index.html" id="floating-back-btn" title="Back to Island Jurney Library">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+    </a>
+
+    <main class="library-grid">
+<!--
+      
+-->
+
+        <!-- Book 2 Card Entry -->
+        <a href="javascript:void(0)" class="book-item">
+            <div class="cover-wrapper coming-soon">
+                <div class="message"><div>Coming Soon!</div></div>
+                <img src="./island-jurney-1/cover.png" alt="Island Journey 1" >
+            </div>  
+            <div class="book-info">
+                <div class="book-title">Island Journey 1 (2026)</div>
+                <div class="book-meta">61 Pages, 700 Panels</div>
+            </div>
+        </a>
+<!--
+        <a href="https://youtu.be/BzNGvUkCHRc?si=_791mRZOK2ctvhLx" class="book-item youtube-link" target="_blank">
+            
+            <div class="cover-wrapper">
+                <div  class="play-button"><img src="../../images/youtube-logo.png" /></div>
+                <div class="watch">
+                    <img src="./island-jurney-1/trailer-thumb.jpg" alt="Watch the trailer on YouTube!" >
+                    <div>Watch the trailer!</div>
+                </div>
+            </div>  
+        </a>
+    -->
+        <div id="youtube-player" class="book-item youtube-link" target="_blank">    
+            <div class="cover-wrapper">
+                <div  class="play-button"><img src="../../images/youtube-logo.png" /></div>
+                <div class="watch">
+                    <img src="./island-jurney-1/trailer-thumb.jpg" alt="Watch the trailer on YouTube!" >
+                    <div>Watch the trailer!</div>
+                </div>
+            </div>  
+        </div>
+        
+        <!-- Modal -->        
+        <div class="modal-overlay" id="modalOverlay">
+            <div class="modal-content">
+                <button class="close-btn" id="closeModalBtn" aria-label="Close modal">&times;</button>
+                <div class="video-container" id="videoContainer">
+                    <!-- Iframe is generated cleanly right here inside the layout container -->
+                    <iframe id="modalVideo" src="" allow="autoplay; fullscreen; picture-in-picture" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+        <!--/Modal-->
+
+    </main>
+
+    <!-- Fixed Copyright Footer -->
+    <div id="sticky-copyright">
+        &copy; <script>document.write(new Date().getFullYear());</script> Benji R. Site developed by Alon R. All rights reserved.
+    </div>
+
+    <script>
+        const videoId = 'BzNGvUkCHRc'; 
+        const aspectRatio = '4:3'; // Supported configurations: '4:3', '16:9', '1:1'
+        const modalOverlay = document.getElementById('modalOverlay');
+        const openModalBtn = document.getElementById('youtube-player');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const videoContainer = document.getElementById('videoContainer');
+        const modalVideo = document.getElementById('modalVideo');
+    </script>
+    <script src="../../scripts/youtube-modal.js"></script>
+
+</body>
+</html>

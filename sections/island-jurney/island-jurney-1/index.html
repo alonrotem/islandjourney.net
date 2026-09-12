@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Benji Comics - Island Jurney 1</title>
+    <!-- Your exact script references -->
+    <script src="../../../scripts/turnjs4/extras/jquery.min.1.7.js"></script>
+    <script src="../../../scripts/turnjs4/lib/turn.min.js"></script>
+    <link rel="stylesheet" href="../../../css/common.css">
+    <link rel="stylesheet" href="../../../css/comics.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../../../images/favicon/site.webmanifest">
+    
+    <!-- Open Graph Metadata (Facebook, Scrapers) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alonintheworld.com/benji-comics/sections/island-jurney/island-jurney-1/">
+    <meta property="og:title" content="Benji's Comics Library - Island Jurney 1">
+    <meta property="og:description" content="Read Benji's comics online! Explore the collection of interactive digital books!">
+    <meta property="og:image" content="https://alonintheworld.com/benji-comics/sections/island-jurney/island-jurney-1/pages/01.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Discord & Twitter Cards Meta Tags -->
+    <meta name="twitter:card" content="Benji's digital library!">
+    <meta name="twitter:title" content="Benji's Comics Library - Island Jurney 1">
+    <meta name="twitter:description" content="Read Benji's comics online! Explore the collection of interactive digital books!">
+    <meta name="twitter:image" content="https://alonintheworld.com/benji-comics/sections/island-jurney/island-jurney-1/pages/01.png">
+
+</head>
+<body>
+
+    <div class="content-wrapper"><div class="main-content">
+    <!-- Loading Screen -->
+    <div id="loader-overlay">
+        <div class="spinner"></div>
+        <div class="loader-text" id="load-progress">Loading pages (0%)</div>
+    </div>
+
+    <!-- Floating Back Button -->
+    <a href="../../../" id="floating-back-btn" title="Back to Island Jurney Library">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+    </a>
+
+        <!-- Floating Reset Zoom Button -->
+        <button id="floating-reset-zoom-btn" title="Reset Zoom">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+            <span>Reset View</span>
+        </button>
+
+    <div id="viewport-wrapper">
+        <button class="nav-btn" id="prev-btn">&#10094;</button>
+        
+        <div id="flipbook-wrapper">
+            <div id="flipbook">
+                <!-- Structural HTML built dynamically below -->
+            </div>
+        </div>
+
+        <button class="nav-btn" id="next-btn">&#10095;</button>
+    </div>
+
+    <a href="./full/island-jurney-1.pdf" download="./full/island-jurney-1.pdf" id="floating-download-btn" title="Download the whole book">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+    </a>
+
+    </div>
+    <!-- Fixed Copyright Footer -->
+    <footer class="floating-footer">
+        &copy; <script>document.write(new Date().getFullYear());</script> Benji R. Site developed by Alon R. All rights reserved.
+    </footer>
+    </div>
+
+    <script>
+        var totalPages = 66;
+        var flipbook = $("#flipbook");
+        var baseRatio = 1.333; 
+        var loadedCount = 0;
+    </script>
+    <script src="../../../scripts/comics.js"></script>
+
+</body>
+</html>
