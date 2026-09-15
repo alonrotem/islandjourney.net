@@ -1,0 +1,36 @@
+name: Update Page View Statistics
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Fires automatically every day at midnight UTC
+  workflow_dispatch:      # Allows you to click a button and run it manually
+
+jobs:
+  build-and-sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # Mandatory for committing changes back to your branch
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+
+    - name: Install Google Analytics Client
+      run: pip install google-analytics-data
+
+    - name: Run Fetch Script
+      env:
+        GA_CREDENTIALS: ${{ secrets.GA_CREDENTIALS }}
+        GA_PROPERTY_ID: ${{ secrets.GA_PROPERTY_ID }}
+      run: python update_stats.py
+
+    - name: Commit and Push Changes
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: "Automated daily page view sync [skip ci]"
+        file_pattern: 'stats.html'
