@@ -391,6 +391,11 @@ header img {
     padding: 20px;
     border: 1px solid white;
     border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
   }
 
   .social-links img {
@@ -405,4 +410,35 @@ header img {
 
   #img-discord:hover {
     content: url('../images/social/discord-blue.png');
+  }
+
+  @media (max-width: 666px) {
+    .social-links {
+        padding: 10px;
+        flex-direction: row;
+    }
+
+    .social-links img {
+        width: 40px;
+        height: auto;
+        margin: 0px 10px;        
+    }
+  }
+
+  @media (max-width: 600px) {
+    .instructions {
+        display: none;
+    }
+  }
+
+  @media (max-width: 470px) {
+    .social-links {
+        padding: 10px;
+        flex-direction: column;
+    }
+    .social-links img {
+        width: 35px;
+        height: auto;
+        margin: 10px 0px;        
+    }    
   }
