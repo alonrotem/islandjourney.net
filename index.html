@@ -1,7 +1,7 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    
+<head>    
     <!-- Google analytics tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-C9G21STJ8S"></script>
     <script>
@@ -14,7 +14,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Island Journey</title>
+    <title>Island Journey: Chapter 1</title>
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/library.css">
 
@@ -36,34 +36,100 @@
     <meta name="twitter:card" content="Island Journey">
     <meta name="twitter:title" content="Island Journey">
     <meta name="twitter:description" content="Island Journey comics, by Benji R">
-    <meta name="twitter:image" content="https://islandjourney.net/images/front.png">    
+    <meta name="twitter:image" content="https://islandjourney.net/images/front.png">
 </head>
-<body>
-    <div class="content-wrapper"><div class="main-content" style="justify-content: flex-start;">
-    <div class="logo-section">
-        <img src="./images/island-journey-new.png" alt="Island Journey comics">
-    </div>
-    
-        <main class="library-grid">
+<!-- 
+  CRITICAL: Setting margin: 0 on the body removes the browser's 
+  default spacing, which is the most common cause of rogue scrollbars.
+-->
+<body style="margin: 0; padding: 0; overflow: hidden;">
 
-            <a href="./sections/island-jurney/island-jurney-1/" class="book-item">
-                <div class="cover-wrapper">
-                    <!-- Points to front cover image of your first booklet -->
-                    <img src="./sections/island-jurney/island-jurney-1/cover.png" alt="Island Jurney 1">
-                </div>
-                <div class="book-info">
-                    <div class="book-title share-tech-mono">CHAPTER 1</div>
-                </div>
-            </a>
-
-    </main>
-    </div>
-    <!-- Fixed Copyright Footer -->
-    <footer>
-        &copy; <script>document.write(new Date().getFullYear());</script> Benji R. Site developed by Alon R. All rights reserved.
-    </footer>  
-    </div>
+  <!-- Main Container: Strictly locked to the screen viewport height -->
+  <div class="container" style="display: flex; flex-direction: column; height: 100vh; width: 100vw; overflow: hidden;">
     
+    <!-- Top Div -->
+    <div class="logo-section" style="padding: 15px; text-align: center;">
+      <img src="./images/island-journey-new.png" alt="Island Journey comics">
+    </div>
+
+    <!-- Middle Div -->
+    <div style="flex-grow: 1; min-height: 0; width: 100%; position: relative;">
+        <a id="comic-link" href="./sections/island-jurney/island-jurney-1/" 
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
+            
+            <!-- The 3D Scene Wrapper -->
+            <div class="flip-scene" style="width: 100%; height: 100%;">
+                <!-- The Card that will receive the 'flipped' class -->
+                <div id="flipCard" class="flip-card">
+                    
+                    <!-- FRONT IMAGE -->
+                    <div class="card-face card-face-front">
+                        <img 
+                            src="./sections/island-jurney/island-jurney-1/cover.png" 
+                            style="max-height: 100%; max-width: 100%; object-fit: contain; display: block;"
+                        />
+                    </div>
+                    
+                    <!-- BACK IMAGE -->
+                    <div class="card-face card-face-back">
+                        <img 
+                            src="./sections/island-jurney/island-jurney-1/pages/66.png" 
+                            style="max-height: 100%; max-width: 100%; object-fit: contain; display: block;"
+                        />
+                    </div>
+
+                </div>
+            </div>
+            
+        </a>
+    </div>
+    <!--/middle div-->
+
+    <!-- Bottom Div -->
+    <div style="padding: 15px; text-align: center;">
+        <div class="book-title share-tech-mono">
+            CHAPTER 1<br/>
+            The Beginning of the End
+        </div>
+        <div class="footer">
+            &copy; <script>document.write(new Date().getFullYear());</script> Benji R. Site developed by Alon R. All rights reserved.
+        </div>         
+    </div>
+
+  </div>
+
+  <div class="instructions">
+    <p>Click the cover to read!</p>
+    <p>Right-click to flip!</p>
+  </div>
+  <div class="social-links">
+    <p>
+        <a href="https://www.youtube.com/@kiguyYT" target="_blank">
+        <img id="img-youtube" src="./images/social/youtube-play-white.png" />
+        </a>
+    </p>
+    <p>
+        <a href="https://discord.gg/pAJ9TTRHX" target="_blank">
+        <img id="img-discord" src="./images/social/discord-white.png" />
+        </a>
+    </p>
+  </div>
+
+    <script>
+        // Select the elements
+        const comicLink = document.getElementById('comic-link');
+        const flipCard = document.getElementById('flipCard');
+
+        // Intercept the contextmenu (right-click) event
+        comicLink.addEventListener('contextmenu', function(event) {
+            // 1. Stop the browser's standard right-click menu from opening
+            event.preventDefault();
+            
+            // 2. Toggle the CSS class to trigger the smooth 3D flip
+            flipCard.classList.toggle('flipped');
+        });
+    </script>
+
     <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="benji.comics" data-description="Support me on Buy me a coffee!" data-message="" data-color="#DEDEDE" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
     <script src="./scripts/stats.js"></script>
 </body>

@@ -24,15 +24,14 @@ def get_page_views():
         property=f"properties/{property_id}",
         dimensions=[Dimension(name="pagePath")],
         metrics=[Metric(name="screenPageViews")],
-        # "2020-01-01" ensures you capture all views since the beginning of time
         date_ranges=[DateRange(start_date="2020-01-01", end_date="today")],
-        # Filter strictly for the index page
+        # FIXED: Match either variation of the home page path
         dimension_filter=FilterExpression(
             filter=Filter(
                 field_name="pagePath",
                 string_filter=Filter.StringFilter(
-                    match_type=Filter.StringFilter.MatchType.EXACT,
-                    value="/index.html", # Note: Change to "/" if GA4 records your home page that way
+                    match_type=Filter.StringFilter.MatchType.IN_LIST,
+                    value_list=["/", "/index.html"], 
                 ),
             )
         ),
@@ -40,10 +39,11 @@ def get_page_views():
     
     response = client.run_report(request)
     
-    # Extract total views safely if the page has data
+    # Extract total views by summing up matching rows (in case both exist)
     total_views = 0
-    for row in response.rows:
-        total_views = int(row.metric_values[0].value) # Fixed access to metric values array
+    if response.rows:
+        for row in response.rows:
+            total_views += int(row.metric_values[0].value)
         
     return total_views
 

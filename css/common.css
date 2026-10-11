@@ -117,6 +117,21 @@ footer:hover {
     opacity: 1;                /* Fully vibrant on hover */
 }
 
+.footer {
+    text-align: center;
+    padding-top: 16px;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    color: #8d8b89;            
+    opacity: 0.6;              /* Semi-transparent by default */
+    transition: opacity 0.3s ease, visibility 0.3s ease;    
+}
+
+.footer:hover {
+    opacity: 1;                /* Fully vibrant on hover */
+}
+
 @media (max-width: 600px) {
     footer {
         font-size: 0.75rem;
