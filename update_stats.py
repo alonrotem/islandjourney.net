@@ -25,13 +25,12 @@ def get_page_views():
         dimensions=[Dimension(name="pagePath")],
         metrics=[Metric(name="screenPageViews")],
         date_ranges=[DateRange(start_date="2020-01-01", end_date="today")],
-        # FIXED: Match either variation of the home page path
+        # FIXED: Replacing string_filter with the proper dedicated in_list_filter object
         dimension_filter=FilterExpression(
             filter=Filter(
                 field_name="pagePath",
-                string_filter=Filter.StringFilter(
-                    match_type=Filter.StringFilter.MatchType.IN_LIST,
-                    value_list=["/", "/index.html"], 
+                in_list_filter=Filter.InListFilter(
+                    values=["/", "/index.html"], 
                 ),
             )
         ),
@@ -39,10 +38,11 @@ def get_page_views():
     
     response = client.run_report(request)
     
-    # Extract total views by summing up matching rows (in case both exist)
+    # Extract total views by accumulating matching rows
     total_views = 0
     if response.rows:
         for row in response.rows:
+            # FIXED: Explicitly casting row.metric_values element directly
             total_views += int(row.metric_values[0].value)
         
     return total_views
