@@ -385,17 +385,36 @@ header img {
 
   .instructions {
     position: absolute;
-    right:20px;
+    right: 20px;
     top: 20px;
     padding: 10px;
     border: 1px solid white;
-    border-radius: 8px;
+    border-radius: 29px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    font-size: 9px;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    align-items: center;
+    line-height: 18px;
+  }
+
+  .big-instructions {
+    font-size: 14px;
   }
 
   .social-links {
+    /*
     position: absolute;
     left:20px;
-    top: 20px;
+    bottom: 20px;
+    */
+    position: fixed;
+    bottom: 18px;
+    left: 13px;
+
     padding: 15px;
     border: 1px solid white;
     border-radius: 9999px;
@@ -406,6 +425,12 @@ header img {
     justify-content: center;
     align-items: center;    
   }
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}  
 
   .social-links img {
     width: 50px;
@@ -442,9 +467,10 @@ header img {
 
   @media (max-width: 470px) {
     .social-links {
-        top: 5px;
-        left: 8px;
         /*
+        bottom: 5px;
+        left: 8px;
+        
         padding: 5px;
         flex-direction: column;
         */
